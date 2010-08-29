@@ -4,7 +4,7 @@ Abusedesk plugin for Yourls - URL Shortener
 Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 
 Abusedesk for Yourls is a plugin module written and tested with Yourls SVN rev. 503
-but should be functional with any release of 1.4 or higher.
+but is probably functional with any release of 1.4 or higher.
 
 Abusedesk is designed to allow YOURLS-administrators to prevent or restrict abuse by
 link-posters. It does this by the following methods:
