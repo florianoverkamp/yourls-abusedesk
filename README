@@ -1,0 +1,37 @@
+======================================================================================
+Abusedesk plugin for Yourls - URL Shortener
+
+Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
+
+Abusedesk for Yourls is a plugin module written and tested with Yourls SVN rev. 503
+but should be functional with any release of 1.4 or higher.
+
+Abusedesk is designed to allow YOURLS-administrators to prevent or restrict abuse by
+link-posters. It does this by the following methods:
+
+1) Implement a blacklist and a report-page. If any visitor states a short URL is abusive, 
+the system will automatically mark the URL as 'bad' and report future visitors of this.
+
+2) Implement a banlist and allow the administrator to prevent certain IP-addresses to
+post, or prevent certain (partial) URL's to be shortened.
+
+3) If Google Safe Browsing is activated, prevent visitors from running into phishing or
+malware sites
+
+======================================================================================
+HOW TO INSTALL
+
+1) Edit config.php and insert appropriate value
+2) Activate Abusedesk for Yourls from the Yourls Admin interface
+3) (Optional) Link report.php from the pages/ subdirectory
+
+HOW TO ACTIVATE Google Safe Browser
+
+Google Safe Browsing is implemented by installing/using phpGSB.
+
+1) Get a Google Safe Browsing API key
+2) Run the install-gsb script once, it will create the database tables
+3) Run the update-gsb script periodically (i.e. once per hour) from cron to 
+load the hash-tables
+
+======================================================================================
