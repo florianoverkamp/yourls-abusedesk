@@ -19,9 +19,14 @@ post, or prevent certain (partial) URL's to be shortened.
 malware sites
 
 ======================================================================================
+REQUIREMENTS
+
+1) An installed and working Yourls setup
+2) Subversion (for downloading phpGSB)
+
 HOW TO INSTALL
 
-1) Edit config.php and insert appropriate value
+1) Copy config-sample.php to config.php and insert appropriate values
 2) Activate Abusedesk for Yourls from the Yourls Admin interface
 3) (Optional) Link report.php from the pages/ subdirectory
 
@@ -30,8 +35,9 @@ HOW TO ACTIVATE Google Safe Browser
 Google Safe Browsing is implemented by installing/using phpGSB.
 
 1) Get a Google Safe Browsing API key
-2) Run the install-gsb script once, it will create the database tables
-3) Run the update-gsb script periodically (i.e. once per hour) from cron to 
+2) Adjust config.php: uncomment and insert yout API key
+3) Run the install-gsb script once, it will download phpGSB from subversion and create the database tables
+4) Run the update-gsb script periodically (i.e. once per hour) from cron to 
 load the hash-tables
 
 ======================================================================================

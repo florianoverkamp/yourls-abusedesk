@@ -1,0 +1,29 @@
+#!/usr/bin/php
+<?
+  require_once("config.php");
+  require_once( dirname(__FILE__).'/../../../includes/load-yourls.php' );
+
+  $url = "http://tty.nu";
+
+  if(isset($argv[1])) $url = $argv[1];
+
+  $phpgsb = new phpGSB(YOURLS_DB_NAME, YOURLS_DB_USER, YOURLS_DB_PASS, YOURLS_DB_HOST, false);
+  $phpgsb->apikey = GSB_APIKEY;
+  echo "\n";
+  $flagged = false;
+  $phpgsb->usinglists = array('goog-malware-shavar');
+  if($phpgsb->doLookup($url)) { 
+	echo "MALWARE: $url\n";
+	$flagged = true;
+  }
+  $phpgsb->usinglists = array('googpub-phish-shavar');
+  if($phpgsb->doLookup($url)) { 
+	echo "PHISHING: $url\n";
+	$flagged = true;
+  }
+  if(!$flagged) {
+	echo "Clean: $url\n";
+  }
+  echo "\n";
+  $phpgsb->close();
+?>

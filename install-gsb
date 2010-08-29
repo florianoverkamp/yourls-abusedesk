@@ -1,0 +1,40 @@
+#!/usr/bin/php
+<?
+//
+// Install phpGSB / http://code.google.com/p/phpgsb/
+//
+
+require_once("config.php");
+require_once( dirname(__FILE__).'/../../../includes/load-yourls.php' );
+
+$tempinstaller = 'install-gsb-rewrite.php';
+
+if(!file_exists("phpgsb")) {
+	system("svn co http://phpgsb.googlecode.com/svn/trunk/ phpgsb");
+} else {
+	system("svn up phpgsb");
+}
+$installer = file("phpgsb/install.php");
+$myinstaller = fopen($tempinstaller, 'w');
+
+foreach($installer as $line) {
+	if(strpos($line, 'phpgsb.class.php') > 0) {
+		// the class itself resides in the subdirectory
+		$line = 'require("phpgsb/phpgsb.class.php");' . "\n";
+	}
+	if(strpos($line, 'new phpGSB') > 0) {
+		// found the instantiator
+		// now replace the settings @@@ YOURLS_DB_NAME
+		$line = '$phpgsb = new phpGSB("' . YOURLS_DB_NAME . '", "' . YOURLS_DB_USER . '", "' . YOURLS_DB_PASS . '", "' . YOURLS_DB_HOST . '", true);' . "\n";
+	}
+	fwrite($myinstaller, $line);
+}
+
+fclose($myinstaller);
+
+system("php $tempinstaller");
+echo "\n";
+
+unlink($tempinstaller);
+
+?>
