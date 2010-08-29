@@ -1,14 +1,7 @@
 #!/usr/bin/php
 <?
-/*
-phpGSB - PHP Google Safe Browsing Implementation
-Version 0.1 (ALPHA) - Not recommended for production use
-Released under New BSD License (see LICENSE)
-Copyright (c) 2010, Sam Cleaver (Beaver6813, Beaver6813.com)
-All rights reserved.
-
-UPDATER EXAMPLE
-*/
+// Safebrowsing updater for Abusedesk plugin for Yourls - URL Shortener
+// Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 
 require_once('config.php');
 require_once( dirname(__FILE__).'/../../../includes/load-yourls.php' );

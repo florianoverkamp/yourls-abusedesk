@@ -1,5 +1,8 @@
 #!/usr/bin/php
 <?
+// Commandline check-tool for Abusedesk plugin for Yourls - URL Shortener
+// Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
+
   require_once("config.php");
   require_once( dirname(__FILE__).'/../../../includes/load-yourls.php' );
 

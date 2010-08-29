@@ -1,7 +1,8 @@
 #!/usr/bin/php
 <?
 //
-// Install phpGSB / http://code.google.com/p/phpgsb/
+// Safebrowsing installer for Abusedesk plugin for Yourls - URL Shortener
+// Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 //
 
 require_once("config.php");

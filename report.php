@@ -1,4 +1,7 @@
 <?php
+// Configuration settings for Abusedesk plugin for Yourls - URL Shortener
+// Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
+
 global $ydb;
 ?>
 <p><h2>Report abuse</h2>

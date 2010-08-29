@@ -1,12 +1,14 @@
 <?php
 /*
-Plugin Name: Yourls Abuse Desk
+Plugin Name: Yourls Abusedesk
 Plugin URI: http://blog.tty.nu/yourls-abusedesk/
 Description: Additional handlers to block malware and spammers
 Version: 1.0
 Author: Florian Overkamp
 Author URI: http://blog.tty.nu/
 */
+// Abusedesk plugin for Yourls - URL Shortener
+// Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 
 require_once("config.php");
 
