@@ -104,7 +104,6 @@ function ban_add() {
 		$ban = mysql_real_escape_string($_POST['ban']);
 		$type = mysql_real_escape_string($_POST['type']);
 		$reason = mysql_real_escape_string($_POST['reason']);
-        	echo("REPLACE INTO `$table` (ban, bantype, reason) VALUES('$ban', '$type', '$reason')");
         	$insert = $ydb->query("REPLACE INTO `$table` (ban, bantype, reason) VALUES('$ban', '$type', '$reason')");
 	}
 
