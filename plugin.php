@@ -12,6 +12,32 @@ Author URI: http://blog.tty.nu/
 
 require_once("config.php");
 
+// Create tables for this plugin when activated
+yourls_add_action( 'activated_yourls-abusedesk/plugin.php', 'abusedesk_activated' );
+function abusedesk_activated() {
+	global $ydb;
+
+	$table_banned  = "CREATE TABLE IF NOT EXISTS " . YOURLS_DB_PREFIX . "banned (";
+	$table_banned .= "ban varchar(255) NOT NULL, ";
+	$table_banned .= "bantype enum('src','dst') NOT NULL, ";
+	$table_banned .= "timestamp timestamp NOT NULL default CURRENT_TIMESTAMP, ";
+	$table_banned .= "reason text NOT NULL, ";
+	$table_banned .= "clicks int(10) NOT NULL default '0', ";
+	$table_banned .= "PRIMARY KEY (ban) ";
+	$table_banned .= ") ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+	$tables = $ydb->query($table_banned);
+
+	$table_blocked  = "CREATE TABLE IF NOT EXISTS " . YOURLS_DB_PREFIX . "blocked (";
+	$table_blocked .= "keyword varchar(200) NOT NULL, ";
+	$table_blocked .= "timestamp timestamp NOT NULL default CURRENT_TIMESTAMP, ";
+	$table_blocked .= "ip varchar(41) default NULL, ";
+	$table_blocked .= "reason text, ";
+	$table_blocked .= "addr varchar(200) default NULL, ";
+	$table_blocked .= "PRIMARY KEY (keyword) ";
+	$table_blocked .= ") ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+	$tables = $ydb->query($table_blocked);
+}
+
 // Add forms to work with blacklisted sources or destinations
 yourls_add_action( 'plugins_loaded', 'abusedesk_add_pages' );
 function abusedesk_add_pages() {
