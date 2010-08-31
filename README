@@ -15,7 +15,7 @@ the system will automatically mark the URL as 'bad' and report future visitors o
 2) Implement a banlist and allow the administrator to prevent certain IP-addresses to
 post, or prevent certain (partial) URL's to be shortened.
 
-3) If Google Safe Browsing is activated, prevent visitors from running into phishing or
+3) If Google Safe Browsing is activated, prevent visitors from running into (known) phishing or
 malware sites
 
 ======================================================================================
