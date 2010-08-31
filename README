@@ -26,9 +26,10 @@ REQUIREMENTS
 
 HOW TO INSTALL
 
-1) Copy config-sample.php to config.php and insert appropriate values
-2) Activate Abusedesk for Yourls from the Yourls Admin interface
-3) (Optional) Link report.php from the pages/ subdirectory
+1) Place the yourls-abusedesk folder in the user/plugins directory from Yourls
+2) Copy config-sample.php to config.php and insert appropriate values
+3) Activate Abusedesk for Yourls from the Yourls Admin interface
+4) (Optional) Link report.php from the pages/ subdirectory
 
 HOW TO ACTIVATE Google Safe Browser
 
