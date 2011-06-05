@@ -27,7 +27,8 @@ REQUIREMENTS
 HOW TO INSTALL
 
 1) Place the yourls-abusedesk folder in the user/plugins directory from Yourls
-2) Copy config-sample.php to config.php and insert appropriate values
+2) Copy config-sample.php to config.php (in the plugin directory, not the main yourls 
+   configuration) and insert appropriate values
 3) Activate Abusedesk for Yourls from the Yourls Admin interface
 4) (Optional) Link report.php from the pages/ subdirectory
 
@@ -39,6 +40,17 @@ Google Safe Browsing is implemented by installing/using phpGSB.
 2) Adjust config.php: uncomment and insert yout API key
 3) Run the install-gsb script once, it will download phpGSB from subversion and create the database tables
 4) Run the update-gsb script periodically (i.e. once per hour) from cron to 
-load the hash-tables
+   load the hash-tables
+
+You can test Google Safe Browsing by using the check-gsb script from the shell on the webserver: For example:
+
+| florian@web01:~/apps/yourls/user/plugins/yourls-abusedesk$ ./check-gsb http://blog.tty.nu/
+| 
+| Clean: http://blog.tty.nu/
+| 
+| florian@web01:~/apps/yourls/user/plugins/yourls-abusedesk$ ./check-gsb http://malware.testing.google.test/testing/malware/ 
+| 
+| MALWARE: http://malware.testing.google.test/testing/malware/
+|
 
 ======================================================================================
