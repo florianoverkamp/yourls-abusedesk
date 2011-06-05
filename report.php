@@ -24,7 +24,7 @@ if (!empty($alias)) {
 }
 ?>
 
-<form method="post" action="report.php">
+<form method="post" action="report">
 <table border=0 cellspacing=0 cellpadding=0>
 <tr><td valign=top>Short URL:</td><td valign=top><input type="text" name="alias" size="10" /></td></tr>
 <tr><td valign=top>Reason to disable:<br/><b>(public info)</b></td><td valign=top><textarea rows=6 cols=60 name="report"><? echo $reporttext ?></textarea></td></tr>
