@@ -3,9 +3,10 @@
 // Safebrowsing updater for Abusedesk plugin for Yourls - URL Shortener
 // Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 
-require_once('config.php');
 require_once( dirname(__FILE__).'/../../../includes/load-yourls.php' );
+require_once('config.php');
 
+chdir(dirname(__FILE__));
 $phpgsb = new phpGSB(YOURLS_DB_NAME, YOURLS_DB_USER, YOURLS_DB_PASS, YOURLS_DB_HOST, false);
 //Obtain an API key from: http://code.google.com/apis/safebrowsing/key_signup.html
 $phpgsb->apikey = GSB_APIKEY;
