@@ -10,6 +10,11 @@ Author URI: http://blog.tty.nu/
 // Abusedesk plugin for Yourls - URL Shortener
 // Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
 
+if (!file_exists(dirname(__FILE__)."/config.php")) {
+	echo "YOURLS_ABUSEDESK plugin is missing a config.php file. Please check the README.";
+	die;
+}
+
 require_once("config.php");
 
 // Create tables for this plugin when activated
