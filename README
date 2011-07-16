@@ -42,6 +42,9 @@ Google Safe Browsing is implemented by installing/using phpGSB.
 4) Run the update-gsb script periodically (i.e. once per hour) from cron to 
    load the hash-tables
 
+PLEASE NOTE: Full population of the hash-tables will take around 24 hours. This is because Google gives
+you the hash-tables in small chunks over time. (Thanks to Sam Cleaver for noting this omission in the docs)
+
 You can test Google Safe Browsing by using the check-gsb script from the shell on the webserver: For example:
 
 | florian@web01:~/apps/yourls/user/plugins/yourls-abusedesk$ ./check-gsb http://blog.tty.nu/
