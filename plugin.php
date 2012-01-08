@@ -172,6 +172,15 @@ function check_safe_redirection( $args ) {
 	$resultset = check_blockpage($url, $keyword);  
 
 	if($resultset !== false) {
+		// A hit was found, so we won't be hitting this site any time soon. There are a few options though:
+		if(defined('YOURLS_PHISHING_EDUCATION')) {
+			// Is this a phishing case?
+			if(stristr($resultset['shortreason'] ,'phishing') !== false) {
+				// Forward to the phishing educational page
+				yourls_redirect(YOURLS_PHISHING_EDUCATION, 301 );
+			}
+		}
+		// If no educational forward is wanted, just report the problem to the visitor
 		display_blockpage($resultset['displayreason']);
         }
 }

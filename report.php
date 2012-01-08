@@ -35,3 +35,4 @@ if (!empty($alias)) {
 
 <p><i>Please be advised: <b>Your report will be visible to visitors</b> of the shortlink (Reason to disable) but your contact details will remain confidential. We will only use your contact details if exchange of additional information is required.</i>
 
+<p><i>However, if you mention the word 'Phishing' in the Reason to disable field, we will redirect visitors of the offending page to the <a href="http://education.apwg.org/r/" target="_blank">Antiphishing education</a> page.</i>

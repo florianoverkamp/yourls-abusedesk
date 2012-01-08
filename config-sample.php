@@ -1,4 +1,4 @@
-<?
+<?php
 //
 // Configuration settings for Abusedesk plugin for Yourls - URL Shortener
 // Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
@@ -24,4 +24,8 @@ if (file_exists(dirname(__FILE__).'/phpgsb/phpgsb.class.php')) {
 if (defined('GSB_APIKEY') ) {
 	require_once("phpgsb/phpgsb.class.php");
 }
+
+// Redirect phishing links to an educational page
+//
+define('YOURLS_PHISHING_EDUCATION', 'http://education.apwg.org/r/');
 
