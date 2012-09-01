@@ -1,7 +1,7 @@
 ======================================================================================
 Abusedesk plugin for Yourls - URL Shortener
 
-Copyright (c) 2010, Florian Overkamp <florian@tty.nu>
+Copyright (c) 2010-2012, Florian Overkamp <florian@tty.nu>
 
 Abusedesk for Yourls is a plugin module written and tested with Yourls SVN rev. 755 
 (a.k.a. release 1.5.1) but is probably functional with any release of 1.4 or higher.
@@ -31,6 +31,10 @@ HOW TO INSTALL
    configuration) and insert appropriate values
 3) Activate Abusedesk for Yourls from the Yourls Admin interface
 4) (Optional) Link report.php from the pages/ subdirectory
+
+NOTE: The plugin will automatically attempt to create two new database tables if they 
+don't yet exist. However, this does mean that if the Yourls database user does not have 
+CREATE TABLE grants on the database, you will need to do that manually.
 
 HOW TO ACTIVATE Google Safe Browser
 
